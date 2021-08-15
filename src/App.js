@@ -1,7 +1,7 @@
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
-import List from "./List"
-import CharacterShow  from './CharacterShow';
+import List from "./Components/List"
+import CharacterShow  from './Components/CharacterShow';
 
 function App() {
   return (
