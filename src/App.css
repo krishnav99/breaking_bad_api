@@ -1,15 +1,143 @@
 .App {
   text-align: center;
+  letter-spacing: 0.8px;
+}
+.body{
+  background-color: whitesmoke;
+}
+
+nav{
+  padding: 20px;
+  background-color: black;
+  color: white;
+}
+
+nav h1{
+  letter-spacing: 5px;
+  margin: 0;
 }
 
 .list{
   padding: 10px;
   margin: auto;
-  max-width: 900px;
+  max-width: 800px;
 }
 
+.list input{
+  height: 20px;
+}
+
+
 .card{
-  padding: 20px;
+  color: rgb(77, 76, 76);
+  letter-spacing: 1px;
+  margin: 50px;
+  display: flex;
+  text-align: left;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   width: 100%;
 }
+
+.card img{
+  object-fit: fill;
+  width: 187px;
+  height: auto;
+}
+
+.card div{
+  padding: 15px;
+  padding-left: 25px;
+}
+
+.card span{
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+  color: white;            
+}
+ button{background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%)}
+ button {
+   margin-top: 30px;
+   border:  none;
+   padding: 10px 20px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+  button:hover{
+   cursor: pointer;
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+ .pagnation button{
+   padding: 8px;
+   display: inline; 
+   margin: 20px;
+ }
+ 
+ .character-show{
+   margin: auto;
+   max-width: 992px;
+   display: flex;
+   flex-direction: column;
+ }
+ 
+
+ .character-show h2{
+   letter-spacing: 2px;
+   font-size: 30px;
+   font-weight: 400;
+   margin-bottom: 15px;
+ }
+
+ .character-show hr{
+  width: 100%;
+  border: 0;
+  height: 0;
+  margin-bottom: 35px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+ .container{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    text-align: left;
+  }
+
+  .container div{
+    padding: 50px;
+  }
+
+
+ .character-show img{
+   display: inline-block;
+   object-fit: cover;
+   object-position: top;
+   width: 400px;
+   height: 450px;
+ }
+
+ .character-show span{
+   color: rgb(70, 49, 23);
+   font-weight: bold;
+ }
+
+ .quotes{
+    border-radius: 25px;
+    padding: 30px;
+    margin: 50px 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ }
+
+ 

@@ -4,11 +4,15 @@ import {Link} from 'react-router-dom'
 function Card(props){
     return(
         <div className="card">
-            <p>Name: {props.name}</p>
-            <p>Occupation: {props.occupation.join(", ")}</p>
-            <p>Date of birth: {props.birthday}</p>
-            <p>Status: {props.status}</p>
-            <Link to={`/character/${props.char_id}`}><button>Know more</button></Link>
+            <img src={props.img}></img>
+            <div>
+                <p><span>Name:</span> {props.name}</p>
+                <p><span>Occupation:</span> {props.occupation.join(", ")}</p>
+                <p><span>Date of birth:</span> {props.birthday}</p>
+                <p><span>Status:</span> {props.status}</p>
+                <button> <Link to={`/character/${props.char_id}`}>Know more</Link></button>
+            </div>
+           
         </div>
     )
 }

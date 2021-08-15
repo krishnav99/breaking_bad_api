@@ -24,8 +24,8 @@ function CharacterShow(props){
     },[props.id])
 
     let quotes;
-    if(details.quotes){
-        quotes = details.quotes.map((el,i)=><i key={i}>{el.quote}</i>)
+    if(details.quotes && details.quotes.length!==0){
+        quotes = details.quotes.map((el,i)=><p><i key={i}>"{el.quote}"</i></p>)
     }
 
     let showData;
@@ -34,14 +34,20 @@ function CharacterShow(props){
     }else{
         showData = 
             <div className="character-show">
-                <h2>{details.name}</h2>
-                <img src={details.img} alt={details.name}></img>
-                <p>Occupation: {details.occupation.join(", ")}</p>
-                <p>Status: {details.status}</p>
-                {details.nickname && <p>Nickname: {details.nickname}</p>}
-                <p>Portrayed by: {details.portrayed}</p>
-                <p>Seasons in which the character appears: {details.appearance.join(", ")}</p>
-                {quotes!==""&&<p>Quotes: {quotes}</p>}
+                <div className="container">
+                    <img src={details.img} alt={details.name}></img>
+                    <div>
+                        <h2>{details.name}</h2>
+                         <hr/>
+                        <p><span>Occupation:</span> {details.occupation.join(", ")}</p>
+                        <p><span>Status:</span> {details.status}</p>
+                        {details.nickname && <p><span>Nickname: </span>{details.nickname}</p>}
+                        <p><span>Portrayed by:</span> {details.portrayed}</p>
+                        <p><span>Seasons in which the character appears:</span> {details.appearance.join(", ")}</p>
+                       
+                    </div>
+                </div>
+                {quotes&&<div className="quotes"><span>Quotes:</span>{quotes}</div>}
             </div>
     }
 

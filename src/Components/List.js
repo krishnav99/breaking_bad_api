@@ -38,9 +38,12 @@ function List(){
         <div className="list">
             <span>🔍 </span><input type="text" value={keyword} onChange={(evt)=>{setKeyword(evt.target.value)}}></input>
             {charactersData.length===0?<h4>Loading....</h4>:cards}
-            {pageNumber!==1&&<button onClick={()=>setPageNumber(pageNumber-1)}>Previous</button>}
-            <span>{pageNumber}</span>
-            {pageNumber<7 && <button onClick={()=>setPageNumber(pageNumber+1)}>Next</button>}
+            <div className="pagnation">
+                {pageNumber!==1&&<button onClick={()=>setPageNumber(pageNumber-1)}>Previous</button>}
+                <span>{pageNumber}</span>
+                {pageNumber<7 && <button onClick={()=>setPageNumber(pageNumber+1)}>Next</button>}
+            </div>
+            
         </div>
         
     )
