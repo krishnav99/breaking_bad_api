@@ -6,7 +6,11 @@ import CharacterShow  from './Components/CharacterShow';
 function App() {
   return (
     <div className="App">
-      <h1>Breaking Bad Characters Wiki</h1>
+      <nav>
+        <h1>Breaking Bad Characters Wiki</h1>
+      </nav>
+      <br/>
+
       <Switch>
         <Route exact path="/" render={()=><List/>} />
         <Route exact path="/character/:id" render={(routeProps)=><CharacterShow id={routeProps.match.params.id} />}/>
