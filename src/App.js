@@ -12,7 +12,8 @@ function App() {
       </nav>
       <br/>
       <Switch>
-        <Route exact path="/" render={()=><List/>} />
+        <Route exact path="/" render = {()=><List pageNumber={1}/>} />
+        <Route exact path="/:number" render={(routeProps)=><List pageNumber={routeProps.match.params.number}/>} />
         <Route exact path="/character/:id" render={(routeProps)=><CharacterShow id={routeProps.match.params.id} />}/>
         <Route component ={()=><h1>Error 404! Page not found</h1>} />
       </Switch>

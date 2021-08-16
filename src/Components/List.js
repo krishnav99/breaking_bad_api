@@ -1,14 +1,14 @@
 import React, { useState,useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import axios from "axios"
 import Card from "./Card"
 
 const BASE_URL = "https://www.breakingbadapi.com/api/";
 
 
-function List(){
+function List(props){
     const [keyword, setKeyword] = useState("");
     const [charactersData, setCharactersData] = useState([])
-    const [pageNumber, setPageNumber] = useState(1);
  
     useEffect(() => {
         async function getData(){
@@ -31,6 +31,7 @@ function List(){
         return null
     })
     
+    let pageNumber = parseInt(props.pageNumber);
     data = data.slice((pageNumber-1)*10,pageNumber*10)
     let cards =   data.map(el=><Card {...el} key={el.char_id}/>)
 
@@ -39,9 +40,9 @@ function List(){
             <span>🔍 </span><input type="text" value={keyword} onChange={(evt)=>{setKeyword(evt.target.value)}}></input>
             {charactersData.length===0?<h4>Loading....</h4>:cards}
             <div className="pagnation">
-                {pageNumber!==1&&<button onClick={()=>setPageNumber(pageNumber-1)}>Previous</button>}
+                {pageNumber!==1&&<button><Link to={`/${pageNumber-1}`}>Previous</Link></button>}
                 <span>{pageNumber}</span>
-                {pageNumber<7 && <button onClick={()=>setPageNumber(pageNumber+1)}>Next</button>}
+                {pageNumber<7 && <button><Link to={`/${pageNumber+1}`}>Next</Link></button>}
             </div>
             
         </div>
