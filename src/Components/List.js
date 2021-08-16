@@ -11,6 +11,7 @@ function List(props){
     const [filter, setFilter] = useState({})
     const [charactersData, setCharactersData] = useState([])
  
+    //getting the data from the API
     useEffect(() => {
         async function getData(){
             try{
@@ -42,7 +43,7 @@ function List(props){
     if(filter.alive) data = data.filter(el=> el.status==="Alive")
     if(filter.deceased) data = data.filter(el=>el.status==="Deceased")
 
-
+    //Showing 10 profiles per page
     let pageNumber = parseInt(props.pageNumber);
     data = data.slice((pageNumber-1)*10,pageNumber*10)
     let cards =   data.map(el=><Card {...el} key={el.char_id}/>)

@@ -7,9 +7,12 @@ function CharacterShow(props){
     useEffect(()=>{
         async function getData(){
             try{
+                //Getting the character data
                 const res = await axios.get(BASE_URL+`characters/${props.id}`);
                 if(res.status !==200) throw new Error("Error!! Status code:",res.status)
                 setDetails(res.data[0]);
+
+                //Getting the quotes for that character
                 let author = res.data[0].name;
                 author = author.replace(" ","+");
                 const quotes = await axios.get(BASE_URL+`quote?author=${author}`);
@@ -23,6 +26,7 @@ function CharacterShow(props){
         getData()
     },[props.id])
 
+    //Creating the quote element
     let quotes;
     if(details.quotes && details.quotes.length!==0){
         quotes = details.quotes.map((el,i)=><p><i key={i}>"{el.quote}"</i></p>)
