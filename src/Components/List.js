@@ -53,10 +53,10 @@ function List(props){
             <div className="filter">
                 <span><b>Status</b></span>: 
                 <span>
-                    <input type="checkbox"  name="alive" value ="true" onChange={(evt)=>changeFilter(evt)}/>Alive
+                    <input type="checkbox"  name="alive" value ="true" onChange={(evt)=>changeFilter(evt)}/>Alive🙂
                 </span>
                 <span>
-                    <input type="checkbox"  name="deceased" value ="true" onChange={(evt)=>changeFilter(evt)}/>Deceased
+                    <input type="checkbox"  name="deceased" value ="true" onChange={(evt)=>changeFilter(evt)}/>Deceased💀
                 </span>
                
 
