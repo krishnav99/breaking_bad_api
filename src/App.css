@@ -7,14 +7,18 @@
 }
 
 nav{
-  padding: 20px;
-  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 15px;
+  background-color: #d3a500;
   color: white;
 }
 
 nav h1{
+  font-size: 28px;
+  margin: 0px 0px 0px 20px;
   letter-spacing: 5px;
-  margin: 0;
 }
 
 .list{

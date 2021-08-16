@@ -7,10 +7,10 @@ function App() {
   return (
     <div className="App">
       <nav>
+        <img src="/breaking-bad.png" alt="breaking-bad" width="50" height="50"/>
         <h1>Breaking Bad Characters Wiki</h1>
       </nav>
       <br/>
-
       <Switch>
         <Route exact path="/" render={()=><List/>} />
         <Route exact path="/character/:id" render={(routeProps)=><CharacterShow id={routeProps.match.params.id} />}/>
