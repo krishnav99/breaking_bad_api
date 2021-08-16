@@ -8,6 +8,7 @@ const BASE_URL = "https://www.breakingbadapi.com/api/";
 
 function List(props){
     const [keyword, setKeyword] = useState("");
+    const [filter, setFilter] = useState({})
     const [charactersData, setCharactersData] = useState([])
  
     useEffect(() => {
@@ -31,6 +32,17 @@ function List(props){
         return null
     })
     
+    function changeFilter(evt){
+        setFilter((st)=>({...st,
+            [evt.target.name] : evt.target.checked?true:false,
+        }))
+    }
+    
+    //Filterting through status
+    if(filter.alive) data = data.filter(el=> el.status==="Alive")
+    if(filter.deceased) data = data.filter(el=>el.status==="Deceased")
+
+
     let pageNumber = parseInt(props.pageNumber);
     data = data.slice((pageNumber-1)*10,pageNumber*10)
     let cards =   data.map(el=><Card {...el} key={el.char_id}/>)
@@ -38,6 +50,17 @@ function List(props){
     return(
         <div className="list">
             <span>🔍 </span><input type="text" value={keyword} onChange={(evt)=>{setKeyword(evt.target.value)}}></input>
+            <div className="filter">
+                <span><b>Status</b></span>: 
+                <span>
+                    <input type="checkbox"  name="alive" value ="true" onChange={(evt)=>changeFilter(evt)}/>Alive
+                </span>
+                <span>
+                    <input type="checkbox"  name="deceased" value ="true" onChange={(evt)=>changeFilter(evt)}/>Deceased
+                </span>
+               
+
+            </div>
             {charactersData.length===0?<h4>Loading....</h4>:cards}
             <div className="pagnation">
                 {pageNumber!==1&&<button><Link to={`/${pageNumber-1}`}>Previous</Link></button>}

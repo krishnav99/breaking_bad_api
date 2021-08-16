@@ -27,6 +27,14 @@ nav h1{
   max-width: 800px;
 }
 
+.filter{
+  margin-top: 20px;
+}
+
+.filter span{
+  margin: 0px 10px;
+}
+
 .list input{
   height: 20px;
 }
